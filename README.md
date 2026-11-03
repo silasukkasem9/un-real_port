@@ -84,7 +84,7 @@ The case study links to implementation files and separates observed source behav
 ## Identity and contact
 
 - GitHub: [silasukkasem9](https://github.com/silasukkasem9)
-- Email: [silasukaksem9@gmail.com](mailto:silasukaksem9@gmail.com)
+- Email: [silasukkasem9@gmail.com](mailto:silasukkasem9@gmail.com)
 
 ## Deploying to Vercel
 

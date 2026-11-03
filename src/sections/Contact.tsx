@@ -4,7 +4,7 @@ import { Mail, ExternalLink, Copy, Check } from 'lucide-react';
 import styles from './Contact.module.css';
 
 const CONTACT_INFO = {
-  email: 'silasukaksem9@gmail.com',
+  email: 'silasukkasem9@gmail.com',
   github: 'https://github.com/silasukkasem9',
   githubDisplayName: 'Th!rD',
   githubUsername: 'silasukkasem9',
