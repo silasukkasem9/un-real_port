@@ -1,0 +1,386 @@
+/* ─── VERTICAL NAVIGATION RAIL & RESPONSIVE COMPACT BAR ────────────────────── */
+
+/* ── Desktop Left Vertical Rail ─── */
+.desktopRail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--nav-rail-w);
+  background-color: var(--col-bg);
+  border-right: 1px solid var(--col-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: var(--sp-6) var(--sp-4);
+  z-index: 100;
+  user-select: none;
+}
+
+/* ── Rail Header & Monogram ─── */
+.railHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.railWordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-decoration: none;
+  padding: var(--sp-2) 0;
+  transition: opacity var(--t-fast);
+}
+
+.railWordmark:hover {
+  opacity: 0.85;
+}
+
+.monogram {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--col-text);
+  line-height: 1;
+}
+
+.railIdentity {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  color: var(--col-accent);
+}
+
+/* ── Center Section Links ─── */
+.railNav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.railList {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--sp-4);
+  width: 100%;
+}
+
+.railItem {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.railLink {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-2);
+  border-left: 1px solid transparent;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.railLink::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--col-accent);
+  transform: scaleY(0);
+  transition: transform 220ms var(--ease-out);
+}
+
+.railLinkActive::before {
+  transform: scaleY(1);
+}
+
+.railNum {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  color: var(--col-text-dimmer);
+  transition: color var(--t-fast);
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.railLabel {
+  font-family: var(--font-mono);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  color: var(--col-text-dim);
+  transition: color var(--t-fast);
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.railLink:hover .railNum {
+  color: var(--col-accent);
+}
+
+.railLink:hover .railLabel {
+  color: var(--col-text);
+}
+
+.railLinkActive .railNum {
+  color: var(--col-accent);
+}
+
+.railLinkActive .railLabel {
+  color: var(--col-text);
+  font-weight: 500;
+}
+
+/* ── Rail Footer: Status & Replay Intro ─── */
+.railFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  width: 100%;
+}
+
+.railActionBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) 0;
+  color: var(--col-text-dimmer);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+
+.railActionBtn:hover {
+  color: var(--col-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.railActionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.railStatus {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  color: var(--col-text-dimmer);
+  line-height: 1.5;
+}
+
+/* ── Mobile Top Bar (Hidden on Desktop) ─── */
+.mobileBar {
+  display: none;
+}
+
+.mobileMenuOverlay {
+  display: none;
+}
+
+/* ── Responsive Mobile Treatment ─── */
+@media (max-width: 960px) {
+  .desktopRail {
+    display: none;
+  }
+
+  .mobileBar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-mobile-h);
+    background-color: var(--col-bg);
+    border-bottom: 1px solid var(--col-border);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: max(var(--sp-6), env(safe-area-inset-left));
+    padding-right: max(var(--sp-6), env(safe-area-inset-right));
+    z-index: 100;
+  }
+
+  .mobileWordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 0.2em;
+    text-decoration: none;
+  }
+
+  .mobileWordmarkMain {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--col-text);
+  }
+
+  .mobileWordmarkSub {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--col-accent);
+  }
+
+  .mobileActions {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+  }
+
+  .menuToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--col-text);
+    border: 1px solid var(--col-border);
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--t-fast);
+  }
+
+  .menuToggle:hover {
+    border-color: var(--col-accent);
+    color: var(--col-accent);
+  }
+
+  /* ── Mobile Full Menu Overlay ─── */
+  .mobileMenuOverlay {
+    display: block;
+    position: fixed;
+    top: var(--nav-mobile-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--col-bg);
+    border-bottom: 1px solid var(--col-border);
+    z-index: 99;
+    overflow-y: auto;
+    padding: var(--sp-8) var(--sp-6) var(--sp-12);
+  }
+
+  .mobileMenuInner {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-8);
+  }
+
+  .mobileMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--sp-4);
+    border-bottom: 1px solid var(--col-border);
+  }
+
+  .mobileMenuList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .mobileLink {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-4);
+    padding: var(--sp-4) 0;
+    min-height: 64px;
+    border-bottom: 1px solid var(--col-border-subtle);
+    text-decoration: none;
+    transition: color var(--t-fast);
+  }
+
+  .mobileLinkNum {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--col-text-dimmer);
+    letter-spacing: 0.1em;
+  }
+
+  .mobileLinkText {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    font-weight: 600;
+    color: var(--col-text-dim);
+    line-height: 1.1;
+    transition: color var(--t-fast);
+  }
+
+  .mobileActiveTag {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    padding: 2px 6px;
+    border: 1px solid var(--col-accent);
+    color: var(--col-accent);
+    border-radius: 0;
+  }
+
+  .mobileLink:hover .mobileLinkText,
+  .mobileLinkActive .mobileLinkText {
+    color: var(--col-text);
+  }
+
+  .mobileLink:hover .mobileLinkNum,
+  .mobileLinkActive .mobileLinkNum {
+    color: var(--col-accent);
+  }
+
+  .mobileMenuFooter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+    padding-top: var(--sp-6);
+    border-top: 1px solid var(--col-border);
+  }
+
+  .mobileReplayBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4);
+    border: 1px solid var(--col-border);
+    color: var(--col-text);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: var(--col-surface);
+    cursor: pointer;
+    border-radius: 0;
+    transition: all var(--t-fast);
+  }
+
+  .mobileReplayBtn:hover {
+    border-color: var(--col-accent);
+    color: var(--col-accent);
+  }
+
+  .mobileFooterMeta {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    color: var(--col-text-dimmer);
+    letter-spacing: 0.12em;
+  }
+}

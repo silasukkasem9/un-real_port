@@ -1,0 +1,285 @@
+/* ─── HERO SECTION — QUIET LUXURY / EDITORIAL ARCHITECTURE ────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--sp-8) clamp(var(--sp-6), 6vw, var(--sp-16)) var(--sp-6);
+  border-bottom: 1px solid var(--col-border);
+  overflow: hidden;
+  background-color: var(--col-bg);
+}
+
+/* ── Top Metadata Strip ─── */
+.metaStrip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--col-border-subtle);
+}
+
+.metaLeft,
+.metaRight {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.metaItem {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-text-dimmer);
+}
+
+.metaSep {
+  color: var(--col-border-hi);
+  font-size: 0.625rem;
+}
+
+/* ── Main Editorial Grid ─── */
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  gap: clamp(var(--sp-8), 6vw, var(--sp-16));
+  align-items: center;
+  padding: var(--sp-12) 0 var(--sp-8);
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Left Column ─── */
+.colLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.identityLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.labelLine {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background-color: var(--col-accent);
+  flex-shrink: 0;
+}
+
+/* ── Headline ─── */
+.headline {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 5.8vw, 5.5rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  color: var(--col-text);
+}
+
+.headlineLine {
+  display: block;
+  will-change: transform;
+}
+
+.headlineLineOffset {
+  color: var(--col-accent);
+  font-style: italic;
+  font-weight: 400;
+  padding-left: 0.08em;
+}
+
+/* ── Subtitle ─── */
+.subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--col-text);
+}
+
+/* ── Description ─── */
+.description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--col-text-dim);
+  max-width: 44ch;
+  border-left: 1px solid var(--col-accent);
+  padding-left: var(--sp-6);
+}
+
+/* ── CTA Row ─── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-2);
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 var(--sp-6);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-bone);
+  background-color: var(--col-text);
+  border: 1px solid var(--col-text);
+  transition: background-color var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+
+.ctaPrimary:hover {
+  background-color: var(--col-accent);
+  border-color: var(--col-accent);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 var(--sp-6);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-text);
+  background-color: transparent;
+  border: 1px solid var(--col-border-hi);
+  transition: color var(--t-fast), background-color var(--t-fast), border-color var(--t-fast);
+}
+
+.ctaSecondary:hover {
+  border-color: var(--col-accent);
+  color: var(--col-accent);
+  background-color: transparent;
+}
+
+/* ── Right Column — Architectural Plate ─── */
+.colRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plateWrapper {
+  position: relative;
+  width: min(420px, 100%);
+}
+
+.architecturalPlate {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.plateCaption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--col-border-subtle);
+}
+
+/* ── Bottom Metadata Colophon ─── */
+.bottomMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--col-border-subtle);
+}
+
+/* ── Scroll Cue ─── */
+.scrollCue {
+  position: absolute;
+  bottom: var(--sp-6);
+  right: var(--sp-8);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--col-text-dim);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  z-index: 3;
+  transition: color var(--t-fast);
+  transition: color var(--t-fast);
+}
+
+.scrollCue:hover {
+  color: var(--col-accent);
+}
+
+/* ── Responsive ─── */
+@media (max-width: 960px) {
+  .hero {
+    padding: var(--sp-6) clamp(var(--sp-6), 6vw, var(--sp-12));
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-8);
+    padding: var(--sp-6) 0;
+  }
+  .metaRight {
+    display: none;
+  }
+  .scrollCue {
+    display: none;
+  }
+  .plateWrapper {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .headline {
+    font-size: clamp(2.25rem, 10vw, 4.2rem);
+    letter-spacing: -0.04em;
+  }
+  .metaLeft {
+    gap: var(--sp-2);
+    flex-wrap: wrap;
+  }
+  .metaLeft .metaItem:last-child,
+  .metaLeft .metaSep:last-of-type {
+    display: none;
+  }
+  .ctaRow {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .ctaPrimary,
+  .ctaSecondary {
+    justify-content: center;
+    padding: 0 var(--sp-4);
+  }
+  .bottomMeta {
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+}

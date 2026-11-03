@@ -1,0 +1,5 @@
+/* Component styles live in CSS Modules; global tokens live in index.css. */
+
+.appContent {
+  display: contents;
+}

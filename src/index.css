@@ -1,0 +1,184 @@
+/* Quiet exterior. Complex interior. */
+:root {
+  --col-bg: #E9E4D8;
+  --col-surface: #F1EDE4;
+  --col-surface-2: #DED8CC;
+  --col-charcoal: #292B26;
+  --col-border: #C9C2B5;
+  --col-border-hi: #AAA496;
+  --col-border-subtle: rgba(23, 25, 22, 0.12);
+  --col-text: #171916;
+  --col-bone: #E9E4D8;
+  --col-text-dim: #55564F;
+  --col-text-dimmer: #6C6A60;
+  --col-accent: #765C40;
+  --col-bronze: #765C40;
+  --col-accent-muted: #555B45;
+  --col-olive: #555B45;
+  --col-accent-dim: rgba(118, 92, 64, 0.1);
+  --col-accent-glow: rgba(118, 92, 64, 0.06);
+
+  /* Use installed system faces; the design does not depend on a remote font service. */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: Arial, 'Segoe UI', sans-serif;
+  --font-mono: 'Cascadia Mono', Consolas, monospace;
+
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+
+  /* Layout dimensions */
+  --max-w: 1200px;
+  --nav-rail-w: 144px;
+  --nav-mobile-h: 64px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast:   160ms;
+  --t-med:    320ms;
+  --t-slow: 500ms;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--col-bg);
+  scroll-padding-top: calc(var(--nav-mobile-h) + var(--sp-4));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--col-text);
+  background-color: var(--col-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+}
+
+#main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 961px) {
+  #main-content {
+    margin-left: var(--nav-rail-w);
+    width: calc(100% - var(--nav-rail-w));
+  }
+}
+
+@media (max-width: 960px) {
+  #main-content {
+    margin-left: 0;
+    width: 100%;
+    padding-top: var(--nav-mobile-h);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--col-text);
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+ul, ol { list-style: none; }
+
+img, svg { display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--col-olive);
+  outline-offset: 3px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--col-text-dim);
+}
+
+.accent { color: var(--col-accent); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+section[id] { scroll-margin-top: calc(var(--nav-mobile-h) + var(--sp-4)); }
+
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--col-bg); }
+::-webkit-scrollbar-thumb { background: var(--col-charcoal); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--col-border-hi); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

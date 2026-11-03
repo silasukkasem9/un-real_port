@@ -1,0 +1,215 @@
+.about {
+  border-bottom: 1px solid var(--col-border);
+}
+
+.inner {
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--sp-24) var(--sp-8);
+}
+
+/* ── Section header ─── */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-16);
+}
+
+.sectionTitle {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--col-text);
+}
+
+/* ── Body grid ─── */
+.bodyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-16);
+}
+
+/* ── Text column ─── */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.leadText {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--col-text);
+}
+
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.bodyText p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--col-text-dim);
+}
+
+.disclaimer {
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-4);
+}
+
+/* ── Skills column ─── */
+.skillsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.skillsHeader {
+  border-bottom: 1px solid var(--col-border);
+  padding-bottom: var(--sp-3);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8) var(--sp-6);
+}
+
+/* ── Skill group ─── */
+.skillGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.skillCategory {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--col-accent);
+  font-weight: 400;
+}
+
+.skillItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  list-style: none;
+  padding: 0;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: 0.85rem;
+  color: var(--col-text-dim);
+  font-family: var(--font-body);
+}
+
+.skillDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--col-border-hi);
+  flex-shrink: 0;
+}
+
+/* ── Stats bar ─── */
+.statsBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-8);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding-right: var(--sp-8);
+  border-right: 1px solid var(--col-border);
+  padding-top: var(--sp-2);
+  min-width: 0;
+}
+
+.statItem:last-child {
+  border-right: none;
+  padding-left: var(--sp-8);
+  padding-right: 0;
+}
+
+.statItem:not(:first-child):not(:last-child) {
+  padding-left: var(--sp-8);
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 500;
+  color: var(--col-text);
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--col-text-dimmer);
+}
+
+.statNote {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: var(--col-olive);
+  border-left: 1px solid var(--col-olive);
+  padding-left: var(--sp-2);
+  align-self: flex-start;
+}
+
+/* ── Responsive ─── */
+@media (max-width: 1000px) {
+  .bodyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-12);
+  }
+  .statsBar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-8);
+  }
+  .statItem {
+    border-right: none;
+    padding: 0 0 var(--sp-4);
+    border-bottom: 1px solid var(--col-border);
+  }
+  .statItem:last-child {
+    padding-left: 0;
+    border-bottom: none;
+  }
+  .statItem:not(:first-child):not(:last-child) {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner { padding: var(--sp-16) var(--sp-6); }
+  .skillsGrid { grid-template-columns: 1fr; }
+  .statsBar { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .statValue {
+    font-size: clamp(1.5rem, 7.5vw, 2rem);
+    overflow-wrap: anywhere;
+  }
+  .sectionTitle { font-size: clamp(2.5rem, 10vw, 4rem); }
+}

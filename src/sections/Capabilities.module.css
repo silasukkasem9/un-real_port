@@ -1,0 +1,1008 @@
+/* ─── CAPABILITIES SECTION STYLES (PHASE 02.1) ───────────────────────────── */
+
+.capabilities {
+  position: relative;
+  width: 100%;
+  padding: var(--sp-24) var(--sp-6);
+  border-top: 1px solid var(--col-border);
+  background-color: var(--col-bg);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .capabilities {
+    padding: var(--sp-24) var(--sp-8);
+  }
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+/* ── Section Header ── */
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-16);
+  border-bottom: 1px solid var(--col-border);
+  padding-bottom: var(--sp-8);
+}
+
+@media (min-width: 900px) {
+  .sectionHeader {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-top: var(--sp-2);
+}
+
+.headerSubtitle {
+  max-width: 460px;
+  font-size: 0.9375rem;
+  color: var(--col-text-dim);
+  line-height: 1.6;
+}
+
+/* ── Sub-section dividers ── */
+.subHeadingBlock {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+}
+
+.subHeadingLine {
+  flex: 1;
+  height: 1px;
+  background-color: var(--col-border);
+}
+
+.subHeadingTitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--col-accent);
+}
+
+/* ── Hard Skills Showcase Container ── */
+.hardSkillsSection {
+  margin-bottom: var(--sp-24);
+}
+
+/* Tab bar for Hard Skills */
+.skillTabBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-8);
+  border-bottom: 1px solid var(--col-border);
+  padding-bottom: var(--sp-3);
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-6);
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--col-border);
+  color: var(--col-text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--t-fast) var(--ease-out);
+  cursor: pointer;
+}
+
+.tabBtn:hover {
+  border-color: var(--col-border-hi);
+  color: var(--col-text);
+  background-color: var(--col-surface-2);
+}
+
+.tabBtnActive {
+  border-bottom-color: var(--col-accent);
+  background-color: transparent;
+  color: var(--col-accent);
+}
+
+.tabIndex {
+  font-size: 0.6875rem;
+  opacity: 0.7;
+}
+
+/* Dual Column Layout */
+.hardSkillGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid var(--col-border);
+  border-bottom: 1px solid var(--col-border);
+  padding: var(--sp-6);
+}
+
+@media (min-width: 1024px) {
+  .hardSkillGrid {
+    grid-template-columns: 1fr 1.35fr;
+    padding: var(--sp-12);
+    gap: var(--sp-12);
+  }
+}
+
+/* Left: Capability description */
+.skillMetaCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.categoryTag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  color: var(--col-accent);
+}
+
+.skillTitle {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.skillTagline {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--col-text);
+  border-left: 2px solid var(--col-accent);
+  padding-left: var(--sp-4);
+  line-height: 1.5;
+}
+
+.skillDesc {
+  font-size: 0.9375rem;
+  color: var(--col-text-dim);
+  line-height: 1.7;
+}
+
+/* Principles list */
+.principlesGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  margin-top: var(--sp-2);
+}
+
+.principleItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  background-color: transparent;
+  border: 0;
+  border-left: 1px solid var(--col-border-hi);
+  padding: 0 var(--sp-4);
+}
+
+.principleLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--col-text);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.principleLabel::before {
+  content: '↳';
+  color: var(--col-accent);
+}
+
+.principleDetail {
+  font-size: 0.8125rem;
+  color: var(--col-text-dim);
+  line-height: 1.5;
+}
+
+/* Right: Visual Blueprint & Inspector */
+.blueprintCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.blueprintHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--col-border);
+  padding-bottom: var(--sp-3);
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.blueprintBadge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--col-accent);
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.blueprintTerminal {
+  background-color: var(--col-surface);
+  border: 0;
+  border-top: 1px solid var(--col-border);
+  padding: var(--sp-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+/* Confirmed Work Card */
+.confirmedWorkHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.workNameRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.workName {
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--col-text);
+}
+
+/* Dual Repository Link Buttons */
+.repoButtonsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+
+.repoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--col-text);
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--col-border-hi);
+  padding: var(--sp-2) var(--sp-4);
+  transition: all var(--t-fast) var(--ease-out);
+}
+
+.repoBtn:hover,
+.repoBtn:focus-visible {
+  border-color: var(--col-accent);
+  color: var(--col-accent);
+  background-color: var(--col-accent-glow);
+}
+
+.workRole {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--col-accent);
+  letter-spacing: 0.05em;
+}
+
+.workContext {
+  font-size: 0.875rem;
+  color: var(--col-text-dim);
+  line-height: 1.5;
+}
+
+/* Source-backed case study */
+.caseStudySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-5);
+  color: var(--col-text-dim);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.caseStudyHeading {
+  margin: 0;
+  color: var(--col-text);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.attributionNote {
+  border-left: 2px solid var(--col-olive);
+  padding-left: var(--sp-3);
+}
+
+.sectionIntro {
+  max-width: 68ch;
+}
+
+.architectureFlow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.architectureFlow li {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.flowConnector {
+  align-self: center;
+  padding: var(--sp-1) 0;
+  color: var(--col-olive);
+  font-family: var(--font-mono);
+}
+
+.layerCard {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.layerStatus {
+  flex-shrink: 0;
+}
+
+.activeLayerDetail {
+  gap: var(--sp-3);
+}
+
+.boundaryNote {
+  margin: 0;
+  border-top: 1px dashed var(--col-border);
+  padding-top: var(--sp-3);
+}
+
+.boundaryNote strong,
+.evidenceExample strong,
+.lessonNote strong {
+  color: var(--col-accent);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sourceLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sourceLinks a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  width: fit-content;
+  max-width: 100%;
+  color: var(--col-accent);
+  font-size: 0.6875rem;
+  text-decoration: underline;
+  text-decoration-color: var(--col-border-hi);
+  text-underline-offset: 3px;
+}
+
+.sourceLinks a:hover,
+.sourceLinks a:focus-visible {
+  color: var(--col-text);
+  text-decoration-color: currentColor;
+}
+
+.sourceLinks a span {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.sourceLinks code {
+  overflow-wrap: anywhere;
+}
+
+.evidenceExample {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-4);
+}
+
+.evidenceExample h6 {
+  margin: 0;
+  color: var(--col-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.evidenceTitleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.evidenceExample p,
+.lessonNote {
+  margin: 0;
+}
+
+.personalNote {
+  border-left: 1px solid var(--col-olive);
+  padding-left: var(--sp-3);
+  color: var(--col-text);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.limitationsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: 0;
+  padding-left: var(--sp-5);
+}
+
+.limitationsList li::marker {
+  color: var(--col-accent);
+}
+
+.lessonNote {
+  border-left: 2px solid var(--col-olive);
+  padding-left: var(--sp-3);
+}
+
+/* Layer architecture interactive stack */
+.layerStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.layerStackLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--col-text-dim);
+  margin-bottom: var(--sp-1);
+}
+
+.layerCard {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--col-border);
+  padding: var(--sp-3) var(--sp-4);
+  transition: all var(--t-fast) var(--ease-out);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.layerCard:hover,
+.layerCard:focus-visible {
+  border-color: var(--col-border-hi);
+  background-color: var(--col-surface-2);
+}
+
+.layerCardSelected {
+  border-color: var(--col-accent);
+  background-color: var(--col-accent-dim);
+}
+
+.layerCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layerBadge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--col-accent);
+}
+
+.layerTitle {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--col-text);
+  margin-left: var(--sp-2);
+  flex: 1;
+}
+
+.layerStatus {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 0;
+}
+
+.status_implemented {
+  background-color: transparent;
+  color: var(--col-olive);
+  border: 1px solid var(--col-olive);
+}
+
+.status_partial {
+  background-color: transparent;
+  color: var(--col-accent);
+  border: 1px solid var(--col-accent);
+}
+
+.status_conceptual {
+  background-color: transparent;
+  color: var(--col-text-dim);
+  border: 1px solid var(--col-border);
+}
+
+/* Layer Detail Callout */
+.activeLayerDetail {
+  background-color: var(--col-surface);
+  border-left: 2px solid var(--col-accent);
+  padding: var(--sp-4);
+  font-size: 0.8125rem;
+  color: var(--col-text);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.sourceVerifyText {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--col-accent);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.boundaryNote {
+  font-size: 0.75rem;
+  color: var(--col-text-dim);
+  border-top: 1px dashed var(--col-border);
+  padding-top: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+
+.boundaryNote span {
+  color: var(--col-accent);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.techTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin-top: var(--sp-1);
+}
+
+.techTag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--col-text-dim);
+  background-color: transparent;
+  border: 1px solid var(--col-border-hi);
+  padding: 2px 6px;
+}
+
+/* Verified Claims */
+.highlightsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  font-size: 0.8125rem;
+  color: var(--col-text-dim);
+  line-height: 1.5;
+}
+
+.highlightItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid var(--col-border);
+  padding: var(--sp-3) 0 0;
+}
+
+.highlightClaim {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--col-text);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.highlightClaim svg {
+  color: var(--col-accent);
+  flex-shrink: 0;
+}
+
+.highlightProof {
+  font-size: 0.75rem;
+  color: var(--col-text-dim);
+  padding-left: 20px;
+}
+
+/* Honest Exclusions Box */
+.exclusionsBox {
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid var(--col-border);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.exclusionsTitle {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: var(--col-accent);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.exclusionsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  font-size: 0.75rem;
+  color: var(--col-text-dim);
+  line-height: 1.4;
+}
+
+.exclusionsList li::before {
+  content: '· ';
+  color: var(--col-accent);
+  font-weight: bold;
+}
+
+/* Reverse Engineering Panel */
+.revEngPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.scopeBox {
+  background-color: transparent;
+  border: 0;
+  border-left: 1px solid var(--col-olive);
+  padding: 0 var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.scopeTitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--col-accent);
+  letter-spacing: 0.1em;
+}
+
+.scopeDesc {
+  font-size: 0.8125rem;
+  color: var(--col-text-dim);
+  line-height: 1.6;
+}
+
+.inspectionSummary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-4);
+}
+
+.inspectionIntro {
+  max-width: 54ch;
+  color: var(--col-text-dim);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.inspectionList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-4) var(--sp-6);
+}
+
+.inspectionRow {
+  display: grid;
+  grid-template-columns: minmax(74px, 0.35fr) minmax(0, 1fr);
+  gap: var(--sp-3);
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-3);
+}
+
+.inspectionRow dt {
+  color: var(--col-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.inspectionRow dd {
+  color: var(--col-text-dim);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .inspectionList {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ── Soft Skills / Thinking Patterns ── */
+.softSkillsSection {
+  margin-top: var(--sp-16);
+}
+
+/* Pull Quote Banner */
+.pullQuoteBanner {
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid var(--col-border);
+  border-bottom: 1px solid var(--col-border);
+  padding: var(--sp-8) var(--sp-6);
+  margin-bottom: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+@media (min-width: 768px) {
+  .pullQuoteBanner {
+    padding: var(--sp-12) var(--sp-8);
+  }
+}
+
+.pullQuoteText {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--col-text);
+  letter-spacing: -0.01em;
+}
+
+.pullQuoteAuthor {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--col-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Thinking Patterns Grid */
+.thinkingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+
+@media (min-width: 640px) {
+  .thinkingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .thinkingGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.thinkingCard {
+  background-color: transparent;
+  border: 0;
+  border-top: 1px solid var(--col-border-hi);
+  padding: var(--sp-6) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  position: relative;
+  transition: all var(--t-fast) var(--ease-out);
+}
+
+.thinkingCard:hover {
+  border-color: var(--col-border-hi);
+  transform: translateY(-2px);
+}
+
+.cardStrength {
+  border-top: 2px solid var(--col-olive);
+}
+
+.cardTendency {
+  border-top: 2px solid var(--col-border-hi);
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.cardHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardIndex {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--col-text-dim);
+}
+
+.typeBadge {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  padding: 2px 6px;
+  font-weight: 700;
+}
+
+.typeBadgeStrength {
+  background-color: transparent;
+  color: var(--col-olive);
+  border: 1px solid var(--col-olive);
+}
+
+.typeBadgeTendency {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--col-text-dim);
+  border: 1px solid var(--col-border);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--col-text);
+  letter-spacing: -0.01em;
+}
+
+.cardVector {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--col-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  font-size: 0.8125rem;
+  color: var(--col-text-dim);
+  line-height: 1.6;
+}
+
+/* Dialectic Breakdown (Benefit vs Risk) */
+.cardDialectic {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--col-border);
+  padding-top: var(--sp-4);
+  font-size: 0.75rem;
+}
+
+.dialecticRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.dialecticLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--col-text-dim);
+}
+
+.dialecticImpact {
+  color: var(--col-text);
+  line-height: 1.4;
+}
+
+.dialecticRisk {
+  color: var(--col-accent);
+  line-height: 1.4;
+}
+
+.mitigationBox {
+  background-color: var(--col-surface-2);
+  border: 1px solid var(--col-border);
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.mitigationLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  color: var(--col-accent);
+  letter-spacing: 0.08em;
+}
+
+.mitigationText {
+  font-size: 0.75rem;
+  color: var(--col-text-dim);
+  line-height: 1.4;
+}
